@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>single cat </title>
+</head>
+<body>
+    <% if(cat){ %>
+
+        <div>
+            <h1><%= cat.name  %></h1>
+            <p><%= cat.age  %></p>
+            <p><%= cat.spices  %></p>
+            <img src="<%= cat.src  %>" alt="<%= cat.name  %>">
+        </div>
+        <%  } else{ %>
+            <h1>there is no cats yet</h1>
+            <% } %>
+</body>
+</html>

@@ -6,7 +6,10 @@
     <title>Document</title>
 </head>
 <body>
-    <h1><%= title  %></h1>
-    <p><%= message %></p>
+    <% if(newCat){ %>
+        <h1>cat has been updated successfully </h1>
+        <% } else{%>
+            <h1>error happened try to add again </h1>
+<% } %>
 </body>
 </html>

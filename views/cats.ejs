@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cats list</title>
+</head>
+<body>
+    <% if(cats.length > 0 ){ %>
+        <% cats.forEach(cat => { %>
+        <div>
+            <h1>cat name:<%= cat.name  %></h1>
+            <p>cat id: <%= cat.id  %></p>
+            <p><%= cat.age  %></p>
+            <p><%= cat.spices  %></p>
+            <img src="<%= cat.src  %>" alt="<%= cat.name  %>">
+        </div>
+        <% }); } else{ %>
+            <h1>there is no cats yet</h1>
+            <% } %>
+</body>
+</html>
