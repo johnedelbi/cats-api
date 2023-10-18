@@ -75,11 +75,11 @@ let cats = [
 
 class Cats {
     constructor(name, age, species, src) {
+        this.id = newId();
         this.name = name;
         this.age = age;
         this.species = species;
         this.src = src;
-        this.id = newId();
     }
 
     static getCats = () => {
@@ -90,7 +90,7 @@ class Cats {
         return cats.find((cat) => cat.id === id);
     };
 
-    static getCatByspecies = (species) => {
+    static getCatBySpecies = (species) => {
         return cats.filter((cat) => cat.species === species);
     };
 

@@ -12,9 +12,9 @@ const catController = {
         res.status(200).render('cat', { cat });
     },
 
-    getCatByspecies: (req, res) => {
+    getCatBySpecies: (req, res) => {
         const { species } = req.params;
-        const cats = Cats.getCatByspecies(species);
+        const cats = Cats.getCatBySpecies(species);
         res.status(200).render('cats', { cats });
     },
 
@@ -27,14 +27,12 @@ const catController = {
     updateCat: (req, res) => {
         const { id } = req.params;
         const { name, age, species, src } = req.body;
-        console.log(req.body);
         const newCat = Cats.updateCat(id, { name, age, species, src });
         res.status(200).render('success', { newCat });
     },
     deleteCatById: (req, res) => {
         const { id } = req.params;
         const newCat = Cats.deleteCat(id);
-        console.log(newCat);
         res.status(200).render('success', { newCat });
     }
 };

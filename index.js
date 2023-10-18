@@ -2,7 +2,6 @@ import path, { dirname } from 'path';
 import { fileURLToPath } from 'url';
 
 import express from 'express';
-
 import dotenv from 'dotenv';
 
 //import logger middleware
@@ -24,12 +23,12 @@ const PATH = dirname(__fileName);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-//server static
-app.use(express.static(path.join(PATH, 'public')));
-
 // template engine
 app.set('view engine', 'ejs');
 app.set('views', path.join(PATH, 'views'));
+
+//server static
+app.use(express.static(path.join(PATH, 'public')));
 
 //use logger
 app.use(logger);
@@ -37,7 +36,7 @@ app.use(logger);
 app.use('/api/cats', catsRoutes);
 
 //handel 404
-app.use((req, res) => {
+app.use('*', (req, res) => {
     res.status(404).render('404', {
         title: '404',
         message: 'page not found'
