@@ -22,7 +22,7 @@ const catController = {
         const { name, age, species, src } = req.body;
         const newCat = new Cats(name, age, species, src);
         newCat.addCat();
-        res.status(200).render('success', { newCat: newCat });
+        res.status(201).render('success', { newCat: newCat });
     },
     updateCat: (req, res) => {
         const { id } = req.params;
