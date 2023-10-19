@@ -33,7 +33,7 @@ app.use(express.static(path.join(PATH, 'public')));
 //use logger
 app.use(logger);
 
-app.use('/api/cats', catsRoutes);
+app.use(catsRoutes);
 
 //handel 404
 app.use('*', (req, res) => {
